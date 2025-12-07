@@ -245,4 +245,13 @@ section {
 	main {
 		padding: 48px 16px;
 	}
+	header {
+		.toolbar {
+			.group {
+				&:nth-child(4) {
+					display: none;
+				}
+			}
+		}
+	}
 }
