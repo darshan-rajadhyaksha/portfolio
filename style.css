@@ -243,7 +243,7 @@ section {
 
 @media (max-width: 640px) {
 	main {
-		padding: 48px 16px;
+		padding: 32px 16px;
 	}
 	header {
 		.toolbar {
