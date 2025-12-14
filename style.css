@@ -6,10 +6,41 @@
 	box-sizing: border-box;
 }
 
+:root {
+	--border-100: #eee;
+	--border-200: #ddd;
+	--border-500: #555;
+	--text-100: #000;
+	--text-300: #222;
+	--text-500: #444;
+	--background-100: #fff;
+	--active-control-background-color: #e4eaf5;
+	--body-background-color: #f0f3f8;
+	--header-background-color: #fff;
+	--chip-background: #f5f5f5;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--border-100: #2f2d2d;
+		--border-200: #2f3035;
+		--border-500: #44474c;
+		--text-100: #f5f5f5;
+		--text-300: #ddd;
+		--text-500: #bbb;
+		--background-100: #151515;
+		--active-control-background-color: #9db9ed;
+		--body-background-color: #181c20;
+		--header-background-color: #151515;
+		--chip-background: #222;
+	}
+}
+
 body {
 	font-family: "Inter", sans-serif;
 	font-size: 0.95em;
-	background: #f0f3f8;
+	color: var(--text-100);
+	background: var(--body-background-color);
 }
 
 #app {
@@ -23,8 +54,8 @@ body {
 		left: 0;
 		right: 0;
 		z-index: 2;
-		background: #fff;
-		border-bottom: 1px solid #ddd;
+		background: var(--header-background-color);
+		border-bottom: 1px solid var(--border-100);
 
 		.titlebar {
 			display: flex;
@@ -33,7 +64,7 @@ body {
 			gap: 8px;
 			text-align: center;
 			padding: 16px 8px;
-			border-bottom: 1px solid #eee;
+			border-bottom: 1px solid var(--border-100);
 
 			h2 {
 				font-size: 0.95em;
@@ -68,8 +99,15 @@ body {
 					border-radius: 8px;
 					cursor: pointer;
 
+					i.fa {
+						color: var(--text-100);
+					}
+
 					&.active {
-						background: #e4eaf5;
+						background: var(--active-control-background-color);
+						i.fa {
+							color: #111;
+						}
 					}
 				}
 			}
@@ -77,7 +115,7 @@ body {
 			.seperator {
 				width: 1px;
 				height: 16px;
-				background: #ddd;
+				background: var(--border-200);
 				margin-inline: 4px;
 			}
 		}
@@ -87,10 +125,10 @@ body {
 main {
 	width: 100%;
 	max-width: 800px;
-	background: #fff;
+	background: var(--background-100);
 	margin-inline: auto;
 	padding: 48px 32px;
-	border: 1px solid #ddd;
+	border: 1px solid var(--border-200);
 	border-top: none;
 	border-bottom: none;
 }
@@ -109,14 +147,14 @@ section {
 
 		&:before {
 			content: "#";
-			color: #444;
+			color: var(--text-500);
 			display: inline-block;
 			margin-right: 4px;
 		}
 	}
 
 	>p {
-		color: #222;
+		color: var(--text-300);
 		margin-bottom: 16px;
 	}
 
@@ -138,7 +176,7 @@ section {
 		gap: 8px;
 
 		li a {
-			border: 1px solid #555;
+			border: 1px solid var(--border-500);
 			padding: 4px 12px;
 			border-radius: 16px;
 			font-size: 0.95em;
@@ -162,12 +200,12 @@ section {
 		flex-wrap: wrap;
 
 		li {
-			border: 1px solid #555;
+			border: 1px solid var(--border-500);
 			padding: 4px 12px;
 			border-radius: 16px;
 			font-size: 0.95em;
 			user-select: none;
-			background: #f5f5f5;
+			background: var(--chip-background);
 		}
 	}
 }
@@ -245,6 +283,7 @@ section {
 	main {
 		padding: 32px 16px;
 	}
+
 	header {
 		.toolbar {
 			.group {
