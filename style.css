@@ -34,6 +34,9 @@
 		--header-background-color: #151515;
 		--chip-background: #222;
 	}
+	a {
+		color: #5494ee;
+	}
 }
 
 body {
