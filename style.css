@@ -58,7 +58,7 @@ body {
 		right: 0;
 		z-index: 2;
 		background: var(--header-background-color);
-		border-bottom: 1px solid var(--border-100);
+		border-bottom: 1px solid var(--border-200);
 
 		.titlebar {
 			display: flex;
@@ -213,7 +213,8 @@ section {
 	}
 }
 
-#work-experience {
+#work-experience,
+#education {
 	ol {
 		li {
 			margin-block: 24px;
