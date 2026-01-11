@@ -228,6 +228,7 @@ section {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
+				gap: 16px;
 
 				h3 {
 					font-size: 1.05em;
